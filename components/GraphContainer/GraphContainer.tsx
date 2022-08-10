@@ -49,26 +49,28 @@ const GraphContainer = () => {
 
   const createRandomRider = () => {
     const numNodes = height * width;
-    const node = Math.floor(Math.random() * numNodes).toString();
+    const source = Math.floor(Math.random() * numNodes).toString();
     const characterName: string = uniqueNamesGenerator(config);
     const color = "#b0c4de";
+    const destination = Math.floor(Math.random() * numNodes).toString();
     return {
       id: uuidv4(),
       name: characterName,
-      node: node,
+      source: source,
+      destination: destination,
       color: color,
       variant: Variant.rider,
     };
   };
 
   const createRandomTaxi = () => {
-    const node = 0;
+    const source = 0;
     const characterName: string = uniqueNamesGenerator(config);
     const color = "#ffff00";
     return {
       id: uuidv4(),
       name: characterName,
-      node: node.toString(),
+      source: source.toString(),
       color: color,
       variant: Variant.taxi,
       capacity: 4,

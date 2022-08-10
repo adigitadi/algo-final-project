@@ -6,12 +6,14 @@ export enum Variant {
 type Unit = {
   id: string;
   name: string;
-  node: string;
+  source: string;
   color: string;
   variant: Variant;
 };
 
-export type Rider = Unit & {};
+export type Rider = Unit & {
+  destination: string;
+};
 
 export type Taxi = Unit & {
   capacity: number;
